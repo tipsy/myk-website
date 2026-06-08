@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Myk — Soft by design. Coming soon.</title>
-  <meta name="description" content="Myk — a new chapter in Norwegian clothing. Soft by design. Arriving soon at mykfit.no." />
+  <title>Myk · Soft by design. Coming soon.</title>
+  <meta name="description" content="Myk. A new chapter in Norwegian clothing. Soft by design. Arriving soon at mykfit.no." />
 
   <!-- Open Graph / social -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Myk — Soft by design." />
+  <meta property="og:title" content="Myk · Soft by design." />
   <meta property="og:description" content="A new chapter in Norwegian clothing. Arriving soon." />
   <meta property="og:url" content="https://mykfit.no" />
   <meta name="theme-color" content="#11100e" />
@@ -158,75 +158,6 @@
       letter-spacing: 0.02em;
     }
 
-    /* ---- Signup ---- */
-    .signup {
-      width: min(100%, 30rem);
-      margin-top: clamp(0.5rem, 2vh, 1rem);
-    }
-    .signup-label {
-      display: block;
-      font-size: 0.68rem;
-      letter-spacing: 0.32em;
-      text-transform: uppercase;
-      color: var(--paper-dim);
-      margin-bottom: 0.95rem;
-    }
-    .field {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      border-bottom: 1px solid var(--line-strong);
-      padding-bottom: 0.7rem;
-      transition: border-color 0.4s var(--ease);
-    }
-    .field:focus-within { border-color: var(--paper); }
-    .field input {
-      flex: 1;
-      background: transparent;
-      border: 0;
-      outline: 0;
-      color: var(--paper);
-      font-family: var(--sans);
-      font-weight: 300;
-      font-size: 1rem;
-      letter-spacing: 0.02em;
-      padding: 0.2rem 0;
-    }
-    .field input::placeholder { color: rgba(243, 239, 233, 0.4); }
-    .field button {
-      flex: none;
-      background: transparent;
-      border: 0;
-      color: var(--paper);
-      cursor: pointer;
-      font-family: var(--sans);
-      font-size: 0.72rem;
-      letter-spacing: 0.26em;
-      text-transform: uppercase;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.3rem 0.1rem 0.3rem 0.4rem;
-      transition: color 0.3s var(--ease), gap 0.3s var(--ease);
-    }
-    .field button:hover { color: var(--accent); gap: 0.8rem; }
-    .field button svg { width: 16px; height: 10px; display: block; }
-    .field button:focus-visible,
-    .field input:focus-visible { outline: none; }
-
-    .note {
-      min-height: 1.1rem;
-      margin-top: 0.85rem;
-      font-size: 0.8rem;
-      letter-spacing: 0.04em;
-      color: var(--accent);
-      opacity: 0;
-      transform: translateY(4px);
-      transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
-    }
-    .note.show { opacity: 1; transform: none; }
-    .note.error { color: #e6a4a4; }
-
     /* ---- Footer ---- */
     .footer {
       display: flex;
@@ -284,77 +215,18 @@
       <h1 class="wordmark reveal d2">Myk</h1>
       <p class="tagline reveal d3">Soft by design.</p>
       <p class="subcopy reveal d4">
-        A new chapter in Norwegian clothing — considered pieces made to be lived in.
-        Quietly arriving.
+        A new chapter in Norwegian clothing. Considered pieces,
+        made to be lived in. Arriving quietly.
       </p>
-
-      <form class="signup reveal d5" id="signup" novalidate>
-        <label class="signup-label" for="email">Be the first to know</label>
-        <div class="field">
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="your@email.com"
-            autocomplete="email"
-            aria-describedby="signup-note"
-            required
-          />
-          <button type="submit" aria-label="Notify me">
-            Notify me
-            <svg viewBox="0 0 24 12" fill="none" aria-hidden="true">
-              <path d="M0 6h22M17 1l5 5-5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-        </div>
-        <p class="note" id="signup-note" role="status" aria-live="polite"></p>
-      </form>
     </section>
 
-    <footer class="footer reveal d6">
+    <footer class="footer reveal d5">
       <span>Trondheim, Norway</span>
-      <nav class="social" aria-label="Social">
-        <a href="https://instagram.com/mykfit" target="_blank" rel="noopener">Instagram</a>
-        <a href="mailto:hello@mykfit.no">Contact</a>
+      <nav class="social" aria-label="Contact">
+        <a href="mailto:hello@mykfit.no">hello@mykfit.no</a>
       </nav>
       <span>mykfit.no</span>
     </footer>
   </main>
-
-  <script>
-    (function () {
-      var form = document.getElementById("signup");
-      var input = document.getElementById("email");
-      var note = document.getElementById("signup-note");
-
-      function setNote(message, isError) {
-        note.textContent = message;
-        note.classList.toggle("error", !!isError);
-        note.classList.add("show");
-      }
-
-      var valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        var email = input.value.trim();
-
-        if (!valid.test(email)) {
-          setNote("Please enter a valid email address.", true);
-          input.focus();
-          return;
-        }
-
-        // No backend yet — hand the signup to a mail client and confirm inline.
-        var subject = encodeURIComponent("Notify me — Myk");
-        var body = encodeURIComponent("Please add me to the Myk list: " + email);
-        window.location.href =
-          "mailto:hello@mykfit.no?subject=" + subject + "&body=" + body;
-
-        setNote("Thank you — we'll be in touch soon.", false);
-        form.reset();
-      });
-    })();
-  </script>
 </body>
 </html>
