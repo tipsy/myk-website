@@ -11,10 +11,10 @@
   <meta property="og:title" content="Myk · Soft by design." />
   <meta property="og:description" content="A new chapter in Norwegian clothing. Arriving soon." />
   <meta property="og:url" content="https://mykfit.no" />
-  <meta name="theme-color" content="#e7c7ba" />
+  <meta name="theme-color" content="#dccfc6" />
 
   <!-- Favicon: a soft, minimal "M" mark drawn inline so the site stays self-contained -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2346443d'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' fill='%23efd8cd' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%234c4843'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' fill='%23e3d6cd' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,14 +22,14 @@
 
   <style>
     :root {
-      /* Dusty blush + warm-grey palette — premium, soft. (var names kept; light theme) */
-      --ink: #e7c7ba;          /* page base — warm dusty blush */
-      --ink-soft: #dcb4a4;
-      --paper: #46443d;        /* primary text — deep warm grey */
-      --paper-dim: rgba(70, 68, 61, 0.66);
-      --line: rgba(70, 68, 61, 0.16);
-      --line-strong: rgba(70, 68, 61, 0.42);
-      --accent: #b06b50;       /* terracotta / clay */
+      /* Morandi — chalky, greyed-down dusty tones. (var names kept; light theme) */
+      --ink: #dccfc6;          /* page base — dusty greige-blush */
+      --ink-soft: #ccbbb1;
+      --paper: #4c4843;        /* primary text — muted warm charcoal-grey */
+      --paper-dim: rgba(76, 72, 67, 0.64);
+      --line: rgba(76, 72, 67, 0.15);
+      --line-strong: rgba(76, 72, 67, 0.4);
+      --accent: #a5756b;       /* dusty clay-rose */
       --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
       --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
       --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
@@ -51,24 +51,24 @@
       overflow-x: hidden;
     }
 
-    /* Layered, image-free background: soft blush wash + slow drifting clay
-       glows + a fine film grain. Keeps the page fully self-contained. */
+    /* Layered, image-free background: muted Morandi wash + slow drifting
+       dusty rose/sage glows + a fine film grain. Fully self-contained. */
     .bg {
       position: fixed;
       inset: 0;
       z-index: 0;
       background:
-        radial-gradient(120% 90% at 50% 6%, rgba(255, 248, 243, 0.65), transparent 55%),
-        radial-gradient(150% 130% at 50% 124%, rgba(150, 95, 78, 0.20), transparent 62%),
-        linear-gradient(180deg, #efd8cd 0%, #e7c7ba 52%, #dcb4a4 100%);
+        radial-gradient(120% 90% at 50% 6%, rgba(247, 242, 236, 0.5), transparent 55%),
+        radial-gradient(150% 130% at 50% 124%, rgba(120, 104, 98, 0.16), transparent 62%),
+        linear-gradient(180deg, #e3d6cd 0%, #dccfc6 52%, #ccbbb1 100%);
     }
     .bg::before {
       content: "";
       position: absolute;
       inset: -20%;
       background:
-        radial-gradient(42% 36% at 28% 28%, rgba(188, 116, 90, 0.22), transparent 70%),
-        radial-gradient(46% 40% at 76% 66%, rgba(150, 120, 108, 0.18), transparent 70%);
+        radial-gradient(42% 36% at 26% 30%, rgba(162, 132, 126, 0.20), transparent 70%),
+        radial-gradient(46% 40% at 78% 64%, rgba(146, 158, 140, 0.16), transparent 70%);
       animation: drift 26s var(--ease) infinite alternate;
     }
     .bg::after {
@@ -133,11 +133,11 @@
       letter-spacing: 0.06em;
       margin: 0;
       font-size: clamp(5.5rem, 26vw, 17rem);
-      background: linear-gradient(180deg, #4a463f 0%, #6e5249 60%, #a06a54 120%);
+      background: linear-gradient(180deg, #4c4843 0%, #786257 62%, #9a7d72 120%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      text-shadow: 0 1px 60px rgba(120, 80, 60, 0.14);
+      text-shadow: 0 1px 60px rgba(110, 92, 84, 0.12);
     }
 
     .tagline {
